@@ -33,17 +33,14 @@ export default function home() {
     finalData(dragItemContent);
   };
   const finalData = (item) => {
-    // if (item) {
-    //   let temp = [showData, ...item.name];
-    //   let temp = setGetdata.p
-    //   setShowData(temp);
-    //   console.log("item", item);
-    // }
-    let dup = structuredClone(getdata);
-    dup.push(item.name);
-    setGetdata(dup)
-    
-    console.log(dup, "get data");
+
+    const dt=[...showData]
+
+    for(let i=0;i<1;i++){
+showData.push(item.name)
+
+    }
+
   };
   return (
     <div className="py-8 pl-8 flex gap-8">
@@ -53,12 +50,15 @@ export default function home() {
       >
         {/* {showBox && ( */}
         <div className="flex bg-gray-600 p-4 gap-4">
-          {showData.map((item) => (
+          {/* {showData.map((item) => (
             <p className="text-white">{item}</p>
             // <div className="flex ">
             // </div>
             // <img src={item} />
-          ))}
+          ))} */}
+          {
+            showData
+          }
         </div>
         {/* )} */}
       </div>
