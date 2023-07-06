@@ -34,7 +34,8 @@ export default function home() {
   };
   const finalData = (item) => {
     if (item) {
-      setShowData(item.images);
+      let temp = [showData, ...item.images];
+      setShowData(temp);
       console.log("item", item);
     }
   };
