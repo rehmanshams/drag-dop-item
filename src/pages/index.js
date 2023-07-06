@@ -33,11 +33,17 @@ export default function home() {
     finalData(dragItemContent);
   };
   const finalData = (item) => {
-    if (item) {
-      let temp = [showData, ...item.name];
-      setShowData(temp);
-      console.log("item", item);
-    }
+    // if (item) {
+    //   let temp = [showData, ...item.name];
+    //   let temp = setGetdata.p
+    //   setShowData(temp);
+    //   console.log("item", item);
+    // }
+    let dup = structuredClone(getdata);
+    dup.push(item.name);
+    setGetdata(dup)
+    
+    console.log(dup, "get data");
   };
   return (
     <div className="py-8 pl-8 flex gap-8">
@@ -46,11 +52,11 @@ export default function home() {
         // onDragEnd={drop}
       >
         {/* {showBox && ( */}
-        <div className="flex-wrap bg-gray-600 p-4 ">
+        <div className="flex bg-gray-600 p-4 gap-4">
           {showData.map((item) => (
-            <div className="flex ">
-              <p className="text-white">{item}</p>
-            </div>
+            <p className="text-white">{item}</p>
+            // <div className="flex ">
+            // </div>
             // <img src={item} />
           ))}
         </div>
