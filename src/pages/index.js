@@ -34,7 +34,7 @@ export default function home() {
   };
   const finalData = (item) => {
     if (item) {
-      let temp = [showData, ...item.images];
+      let temp = [showData, ...item.name];
       setShowData(temp);
       console.log("item", item);
     }
@@ -42,13 +42,16 @@ export default function home() {
   return (
     <div className="py-8 pl-8 flex gap-8">
       <div
-        className="border-[1px] border-gray-700 h-screen w-full"
+        className="border-[1px] border-gray-700 w-full p-8"
         // onDragEnd={drop}
       >
         {/* {showBox && ( */}
-        <div>
+        <div className="flex-wrap bg-gray-600 p-4 ">
           {showData.map((item) => (
-            <p>{item}</p>
+            <div className="flex ">
+              <p className="text-white">{item}</p>
+            </div>
+            // <img src={item} />
           ))}
         </div>
         {/* )} */}
